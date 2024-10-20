@@ -315,10 +315,10 @@ fn prepared_query<'a, T: QueryFragment<Mysql> + QueryId>(
 
 impl MysqlConnection {
     fn set_config_options(&mut self) -> QueryResult<()> {
-        crate::sql_query("SET time_zone = '+00:00';").execute(self)?;
-        crate::sql_query("SET character_set_client = 'utf8mb4'").execute(self)?;
-        crate::sql_query("SET character_set_connection = 'utf8mb4'").execute(self)?;
-        crate::sql_query("SET character_set_results = 'utf8mb4'").execute(self)?;
+        crate::sql_query("SET time_zone = '+00:00';").execute(self);
+        crate::sql_query("SET character_set_client = 'utf8mb4'").execute(self);
+        crate::sql_query("SET character_set_connection = 'utf8mb4'").execute(self);
+        crate::sql_query("SET character_set_results = 'utf8mb4'").execute(self);
         Ok(())
     }
 
